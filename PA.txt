@@ -1,0 +1,4 @@
+
+create table 03_2017_01_dd select a.* from 03_2017_01 a ,03_2017_DD_Details b where a.regno=b.regno and b.postcode='01';
+
+insert into  03_2017_01_dd select  * from 03_2017_01 where regno in (select regno from 03_2017_nonPayment where postcode='01');
